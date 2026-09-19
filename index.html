@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="ÚtilHub V11: herramientas útiles en un solo lugar.">
+
+  <title>ÚtilHub V11 — Todo lo útil</title>
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- FONDO NOVA FLOW -->
+  <div class="nova-bg" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div id="particles"></div>
+  </div>
+
+  <!-- BARRA SUPERIOR -->
+  <header class="topbar">
+
+    <button id="menuBtn" class="icon-btn" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <a class="brand" href="#inicio">
+      <span class="brand-mark">U</span>
+      <span>Útil<span>Hub</span></span>
+    </a>
+
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" title="Cambiar tema">
+        ☾
+      </button>
+
+      <button id="settingsBtn" class="icon-btn" title="Configuración">
+        ⚙
+      </button>
+    </div>
+
+  </header>
+
+  <!-- MENÚ -->
+  <aside id="sidebar" class="sidebar">
+
+    <div class="side-title">
+      ÚtilHub V11
+    </div>
+
+    <button class="side-link active" data-scroll="inicio">
+      🏠 Inicio
+    </button>
+
+    <button class="side-link" data-scroll="quick">
+      ⚡ Acceso rápido
+    </button>
+
+    <button class="side-link" data-scroll="all-tools">
+      📂 Todo lo útil
+    </button>
+
+    <button class="side-link" data-scroll="nearby">
+      📍 Cerca de mí
+    </button>
+
+    <button class="side-link" data-scroll="food">
+      🍔 Comida
+    </button>
+
+    <button class="side-link" data-scroll="shopping">
+      🛒 Compras
+    </button>
+
+    <button class="side-link" data-scroll="settings">
+      ⚙️ Configuración
+    </button>
+
+  </aside>
+
+  <main id="inicio">
+
+    <!-- INICIO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          NOVA FLOW • V11
+        </div>
+
+        <h1>
+          Todo lo útil.
+          <br>
+          <span>En un solo lugar.</span>
+        </h1>
+
+        <p>
+          Herramientas para organizar, calcular, buscar,
+          convertir y resolver tareas del día a día.
+        </p>
+
+        <div class="search-wrap">
+
+          <span>⌕</span>
+
+          <input
+            id="globalSearch"
+            autocomplete="off"
+            placeholder="¿Qué necesitas hacer? Ej. calculadora, QR, compras..."
+          >
+
+          <kbd>Ctrl K</kbd>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RECIENTES -->
+    <section id="quick" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            ACCESO RÁPIDO
+          </span>
+
+          <h2>
+            ⚡ Usadas recientemente
+          </h2>
+        </div>
+
+        <button id="clearRecent" class="text-btn">
+          Limpiar
+        </button>
+
+      </div>
+
+      <div id="recentTools" class="quick-grid"></div>
+
+      <div id="emptyRecent" class="empty">
+        Usa una herramienta y aparecerá aquí automáticamente.
+      </div>
+
+
+      <div class="section-head compact">
+
+        <div>
+          <span class="section-kicker">
+            TUS ELECCIONES
+          </span>
+
+          <h2>
+            ⭐ Favoritos
+          </h2>
+        </div>
+
+      </div>
+
+      <div id="favoriteTools" class="quick-grid"></div>
+
+      <div id="emptyFavorites" class="empty">
+        Pulsa ☆ en una herramienta para guardarla aquí.
+      </div>
+
+    </section>
+
+
+    <!-- TODAS LAS HERRAMIENTAS -->
+    <section id="all-tools" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            CENTRO DE UTILIDADES
+          </span>
+
+          <h2>
+            📂 Todo lo útil
+          </h2>
+        </div>
+
+      </div>
+
+      <div id="filters" class="filters"></div>
+
+      <div id="toolGrid" class="tool-grid"></div>
+
+    </section>
+
+
+    <!-- CERCA DE MÍ -->
+    <section id="nearby" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            SERVICIOS
+          </span>
+
+          <h2>
+            📍 Cerca de mí
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="action-panel">
+
+        <p>
+          Busca lugares de tu zona mediante Google Maps.
+          ÚtilHub no necesita guardar tu ubicación.
+        </p>
+
+        <div class="action-grid">
+
+          <button data-near="restaurantes">
+            🍽️ Restaurantes
+          </button>
+
+          <button data-near="supermercados">
+            🛒 Supermercados
+          </button>
+
+          <button data-near="farmacias">
+            💊 Farmacias
+          </button>
+
+          <button data-near="hospitales">
+            🏥 Hospitales
+          </button>
+
+          <button data-near="bancos">
+            🏦 Bancos
+          </button>
+
+          <button data-near="gasolineras">
+            ⛽ Gasolineras
+          </button>
+
+          <button data-near="tiendas">
+            🏪 Tiendas
+          </button>
+
+          <button data-near="servicios">
+            🔧 Servicios
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMIDA -->
+    <section id="food" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            COMIDA
+          </span>
+
+          <h2>
+            🍔 Busca dónde comer
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="action-panel inline">
+
+        <input
+          id="foodInput"
+          placeholder="Ej. pizza, pollo, ceviche..."
+        >
+
+        <button id="foodSearch">
+          Buscar restaurantes
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPRAS -->
+    <section id="shopping" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            COMPRAS
+          </span>
+
+          <h2>
+            🛒 Busca productos y tiendas
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="action-panel inline">
+
+        <input
+          id="shoppingInput"
+          placeholder="Ej. audífonos, mochila, zapatillas..."
+        >
+
+        <button id="shoppingSearch">
+          Buscar
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONFIGURACIÓN -->
+    <section id="settings" class="section">
+
+      <div class="section-head">
+
+        <div>
+          <span class="section-kicker">
+            PERSONALIZACIÓN
+          </span>
+
+          <h2>
+            ⚙️ Configuración
+          </h2>
+        </div>
+
+      </div>
+
+      <div class="settings-grid">
+
+        <label class="setting">
+
+          <span>
+            <b>🌙 Modo oscuro</b>
+
+            <small>
+              Cambia el aspecto general.
+            </small>
+          </span>
+
+          <input id="darkToggle" type="checkbox">
+
+        </label>
+
+
+        <label class="setting">
+
+          <span>
+            <b>✨ NOVA FLOW</b>
+
+            <small>
+              Activa o desactiva animaciones.
+            </small>
+          </span>
+
+          <input id="animToggle" type="checkbox" checked>
+
+        </label>
+
+
+        <label class="setting">
+
+          <span>
+            <b>🖱️ Efecto del cursor</b>
+
+            <small>
+              Movimiento sutil del fondo.
+            </small>
+          </span>
+
+          <input id="cursorToggle" type="checkbox" checked>
+
+        </label>
+
+      </div>
+
+
+      <div class="data-actions">
+
+        <button id="exportBtn">
+          ⬇️ Exportar respaldo
+        </button>
+
+        <label class="button-like">
+
+          ⬆️ Importar respaldo
+
+          <input
+            id="importFile"
+            type="file"
+            accept="application/json"
+            hidden
+          >
+
+        </label>
+
+        <button id="resetBtn" class="danger">
+          🗑️ Borrar datos locales
+        </button>
+
+      </div>
+
+      <p id="connection" class="connection">
+        ● Comprobando conexión...
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <b>ÚtilHub V11</b>
+    · Todo lo útil en un solo lugar.
+  </footer>
+
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true">
+
+    <div class="modal-card">
+
+      <button id="closeModal" class="modal-close">
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- SERVICE WORKER -->
+  <script>
+
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener("load", () => {
+
+        navigator.serviceWorker
+          .register("./sw.js")
+          .catch(console.log);
+
+      });
+
+    }
+
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
